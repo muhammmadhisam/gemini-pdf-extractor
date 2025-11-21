@@ -1,7 +1,7 @@
 import { generateObject } from "ai";
 import { Data, Effect } from "effect";
 import type { z } from "zod";
-import { ModelProvider } from "./model.provider";
+import { ModelProvider } from "../provider/model.provider";
 
 export class ExtractPdfError extends Data.TaggedError(
   "ExtractPDF/Process/Error"

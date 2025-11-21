@@ -1,7 +1,8 @@
 import process from "node:process";
 import { Layer, Logger, LogLevel, ManagedRuntime } from "effect";
-import { ExtractPDFService } from "./extract-pdf.service";
-import { ModelProvider } from "./model.provider";
+import { ModelProvider } from "../provider/model.provider";
+import { ExtractPDFService } from "../service/extract-pdf.service";
+
 
 const allLive = Layer.mergeAll(
   ExtractPDFService.Default,

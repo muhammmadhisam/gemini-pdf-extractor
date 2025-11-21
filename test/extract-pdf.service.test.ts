@@ -1,10 +1,11 @@
 import path from "node:path";
 import { Effect } from "effect";
 import { describe, it } from "vitest";
-import { ExtractPDFService } from "../src/extract-pdf.service";
-import { readFileAndSize } from "../src/helpers";
-import { Runtime } from "../src/runtime";
+import { ExtractPDFService } from "../src/service/extract-pdf.service";
+import { readFileAndSize } from "../src/helper/helpers";
+
 import { CargoSchema, CargoSystemPrompt } from "../src/schema/cargo";
+import { Runtime } from "../src/core/runtime";
 
 const files = {
   egat: path.join(__dirname, "Invoice_EGAT.pdf"),
