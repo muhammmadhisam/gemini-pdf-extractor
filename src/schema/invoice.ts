@@ -36,7 +36,7 @@ export const InvoiceSchema = z.object({
     ),
 
   // ราคาต่อหน่วย - Unit Price
-  unitPriceTHBPerMMBTU: z
+  unit_price_thb_per_mmbtu: z
     .number()
     .nonnegative()
     .describe(
@@ -46,7 +46,7 @@ export const InvoiceSchema = z.object({
     ),
 
   // จำนวนเงิน - Subtotal (before VAT)
-  subtotalTHB: z
+  subtotal_thb: z
     .number()
     .nonnegative()
     .describe(
@@ -56,7 +56,7 @@ export const InvoiceSchema = z.object({
     ),
 
   // ภาษีมูลค่าเพิ่ม - VAT Amount
-  vatTHB: z
+  vat_thb: z
     .number()
     .nonnegative()
     .describe(
@@ -66,7 +66,7 @@ export const InvoiceSchema = z.object({
     ),
 
   // จำนวนเงินรวม - Grand Total
-  totalTHB: z
+  total_thb: z
     .number()
     .nonnegative()
     .describe(
@@ -82,7 +82,7 @@ export const InvoiceSchema = z.object({
     .optional()
     .describe("Currency code | รหัสสกุลเงิน (e.g., THB, USD, EUR)"),
 
-  vatRate: z
+  vat_rate: z
     .number()
     .min(0)
     .max(1)
