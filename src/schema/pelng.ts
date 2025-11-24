@@ -131,7 +131,7 @@ export const PELNGInvoiceSchema = z.object({
     .nonnegative()
     .describe(
       "Station/Terminal Service Fee (THB), equals sum of fixed-cost and variable-cost service amounts | " +
-        "ค่าบริการสถานี (บาท) = รวมจำนวนเงินค่าบริการส่วนต้นทุนคงที่ + ค่าบริการต้นทุนผันแปร"
+      "ค่าบริการสถานี (บาท) = รวมจำนวนเงินค่าบริการส่วนต้นทุนคงที่ + ค่าบริการต้นทุนผันแปร"
     ),
 
   // Fixed-Cost Service (ค่าบริการส่วนต้นทุนคงที่)
@@ -411,9 +411,25 @@ export const PELNGInvoiceSchema = z.object({
     .number()
     .nonnegative()
     .optional()
-    .describe(
-      "ราคา LNG สำหรับเที่ยวที่ 5 เดือน สิงหาคม 2568 | รวมค่าเนื้อ LNG และค่าใช้จ่ายนำเข้า"
-    ),
+    .describe("ราคา LNG สำหรับเที่ยวที่ 5 เดือน สิงหาคม 2568 | รวมค่าเนื้อ LNG และค่าใช้จ่ายนำเข้า"),
+
+  total_regas_sendout_null: z
+    .number()
+    .nonnegative()
+    .optional()
+    .describe("ปริมาณเนื้อ Regas LNG ทั้งหมด"),
+
+  total_regas_lng_value_null: z
+    .number()
+    .nonnegative()
+    .optional()
+    .describe("มูลค่าเนื้อ Regas LNG ทั้งหมด"),
+
+  total_service_value_null: z
+    .number()
+    .nonnegative()
+    .optional()
+    .describe("ค่าบริการสถานี"),
 });
 
 export type PELNGInvoice = z.infer<typeof PELNGInvoiceSchema>;
