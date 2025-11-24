@@ -6,7 +6,7 @@ import { readFileAndSize } from "../src/helpers";
 import { Runtime } from "../src/runtime";
 import { pttSupplySchemaAndPrompt } from "../src/schema/ptt/supply";
 
-const files = {
+const _files = {
   egat: path.join(__dirname, "Invoice_EGAT.pdf"),
   pelng: path.join(__dirname, "PELNG_EGAT.pdf"),
   cargo2: path.join(__dirname, "EGAT_Cargo2.pdf"),
